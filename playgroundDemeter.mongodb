@@ -1,0 +1,808 @@
+use("Demeter");
+
+// #####################################################################################INICIO CREACION#############################################################
+//
+// db.createCollection("Proveedores", {
+//   validator : {
+//     $jsonSchema:{
+//       bsonType: "object",
+//          title: "Validacion proveedores",
+//          required: [ "city", "lastName", "firstName", "phone", "email" ],
+//          properties : {
+//           firstName:{
+//             bsonType: "string",
+//             description: "'name' must be a string and is required"
+//           },
+//           lastName:{
+//             bsonType: "string",
+//             description: "'lastName' must be a string and is required"
+//           },
+//           city:{
+//             bsonType: "string",
+//             description: "'city' must be a string and is required"
+//           },
+//           phone:{
+//             bsonType: "int",
+//             description:"'year' must be an integer"
+//           },
+//           email:{
+//             bsonType : "string"
+//           }
+//          }
+
+//     }
+//   }
+// })
+
+
+// db.Proveedores.insertMany([
+// 		{
+// 			"product": "Chair",
+// 			"date": "2023-03-19T20:20:21.971Z",
+// 			"waiter": "Ona",
+// 			"price": "674.00",
+// 			"turn": 25
+// 		},
+// 		{
+// 			"product": "Cheese",
+// 			"date": "2023-03-20T00:01:14.589Z",
+// 			"waiter": "Nasir",
+// 			"price": "436.00",
+// 			"turn": 29
+// 		},
+// 		{
+// 			"product": "Tuna",
+// 			"date": "2023-03-19T16:13:05.879Z",
+// 			"waiter": "Keaton",
+// 			"price": "30.00",
+// 			"turn": 12
+// 		},
+// 		{
+// 			"product": "Bike",
+// 			"date": "2023-03-19T10:17:28.145Z",
+// 			"waiter": "Jadyn",
+// 			"price": "724.00",
+// 			"turn": 27
+// 		},
+// 		{
+// 			"product": "Towels",
+// 			"date": "2023-03-19T23:12:54.408Z",
+// 			"waiter": "Chandler",
+// 			"price": "384.00",
+// 			"turn": 40
+// 		},
+// 		{
+// 			"product": "Computer",
+// 			"date": "2023-03-20T07:08:04.669Z",
+// 			"waiter": "Corene",
+// 			"price": "132.00",
+// 			"turn": 23
+// 		},
+// 		{
+// 			"product": "Towels",
+// 			"date": "2023-03-20T06:08:59.986Z",
+// 			"waiter": "Jaquan",
+// 			"price": "128.00",
+// 			"turn": 6
+// 		},
+// 		{
+// 			"product": "Car",
+// 			"date": "2023-03-19T13:51:31.965Z",
+// 			"waiter": "Felton",
+// 			"price": "149.00",
+// 			"turn": 2
+// 		},
+// 		{
+// 			"product": "Tuna",
+// 			"date": "2023-03-19T21:46:19.352Z",
+// 			"waiter": "Modesta",
+// 			"price": "834.00",
+// 			"turn": 38
+// 		},
+// 		{
+// 			"product": "Ball",
+// 			"date": "2023-03-19T16:10:13.631Z",
+// 			"waiter": "Mack",
+// 			"price": "749.00",
+// 			"turn": 23
+// 		},
+// 		{
+// 			"product": "Shoes",
+// 			"date": "2023-03-19T22:36:07.297Z",
+// 			"waiter": "Merlin",
+// 			"price": "968.00",
+// 			"turn": 35
+// 		},
+// 		{
+// 			"product": "Gloves",
+// 			"date": "2023-03-19T20:42:57.825Z",
+// 			"waiter": "Sonya",
+// 			"price": "554.00",
+// 			"turn": 33
+// 		},
+// 		{
+// 			"product": "Gloves",
+// 			"date": "2023-03-20T01:03:03.951Z",
+// 			"waiter": "Colten",
+// 			"price": "530.00",
+// 			"turn": 34
+// 		},
+// 		{
+// 			"product": "Towels",
+// 			"date": "2023-03-19T10:39:49.532Z",
+// 			"waiter": "Ellsworth",
+// 			"price": "182.00",
+// 			"turn": 20
+// 		},
+// 		{
+// 			"product": "Soap",
+// 			"date": "2023-03-19T23:20:50.543Z",
+// 			"waiter": "Kyler",
+// 			"price": "887.00",
+// 			"turn": 25
+// 		},
+// 		{
+// 			"product": "Pants",
+// 			"date": "2023-03-19T23:30:22.435Z",
+// 			"waiter": "Bridgette",
+// 			"price": "642.00",
+// 			"turn": 36
+// 		},
+// 		{
+// 			"product": "Gloves",
+// 			"date": "2023-03-19T21:21:28.852Z",
+// 			"waiter": "Nathanael",
+// 			"price": "688.00",
+// 			"turn": 25
+// 		},
+// 		{
+// 			"product": "Computer",
+// 			"date": "2023-03-19T15:55:45.318Z",
+// 			"waiter": "Jena",
+// 			"price": "438.00",
+// 			"turn": 0
+// 		},
+// 		{
+// 			"product": "Chicken",
+// 			"date": "2023-03-20T05:24:35.415Z",
+// 			"waiter": "Janiya",
+// 			"price": "842.00",
+// 			"turn": 28
+// 		},
+// 		{
+// 			"product": "Soap",
+// 			"date": "2023-03-19T15:50:14.929Z",
+// 			"waiter": "Ernestina",
+// 			"price": "624.00",
+// 			"turn": 38
+// 		},
+// 		{
+// 			"product": "Salad",
+// 			"date": "2023-03-19T15:22:45.119Z",
+// 			"waiter": "Elmer",
+// 			"price": "478.00",
+// 			"turn": 30
+// 		},
+// 		{
+// 			"product": "Bacon",
+// 			"date": "2023-03-20T05:54:47.145Z",
+// 			"waiter": "Jena",
+// 			"price": "868.00",
+// 			"turn": 27
+// 		},
+// 		{
+// 			"product": "Chips",
+// 			"date": "2023-03-20T00:45:12.450Z",
+// 			"waiter": "Jonas",
+// 			"price": "651.00",
+// 			"turn": 30
+// 		},
+// 		{
+// 			"product": "Tuna",
+// 			"date": "2023-03-19T13:02:05.666Z",
+// 			"waiter": "Jaycee",
+// 			"price": "535.00",
+// 			"turn": 10
+// 		},
+// 		{
+// 			"product": "Salad",
+// 			"date": "2023-03-20T08:25:57.422Z",
+// 			"waiter": "Darion",
+// 			"price": "25.00",
+// 			"turn": 37
+// 		},
+// 		{
+// 			"product": "Towels",
+// 			"date": "2023-03-19T11:06:33.373Z",
+// 			"waiter": "Isabell",
+// 			"price": "946.00",
+// 			"turn": 23
+// 		},
+// 		{
+// 			"product": "Bacon",
+// 			"date": "2023-03-19T18:47:46.320Z",
+// 			"waiter": "Monserrate",
+// 			"price": "944.00",
+// 			"turn": 27
+// 		},
+// 		{
+// 			"product": "Sausages",
+// 			"date": "2023-03-19T12:57:36.848Z",
+// 			"waiter": "Malcolm",
+// 			"price": "577.00",
+// 			"turn": 12
+// 		},
+// 		{
+// 			"product": "Car",
+// 			"date": "2023-03-20T04:36:18.061Z",
+// 			"waiter": "Marlin",
+// 			"price": "177.00",
+// 			"turn": 31
+// 		},
+// 		{
+// 			"product": "Sausages",
+// 			"date": "2023-03-19T13:45:02.540Z",
+// 			"waiter": "Narciso",
+// 			"price": "55.00",
+// 			"turn": 22
+// 		},
+// 		{
+// 			"product": "Chips",
+// 			"date": "2023-03-20T03:43:46.032Z",
+// 			"waiter": "Ulices",
+// 			"price": "46.00",
+// 			"turn": 15
+// 		},
+// 		{
+// 			"product": "Fish",
+// 			"date": "2023-03-20T03:10:23.457Z",
+// 			"waiter": "Eulah",
+// 			"price": "577.00",
+// 			"turn": 40
+// 		},
+// 		{
+// 			"product": "Car",
+// 			"date": "2023-03-19T15:35:27.770Z",
+// 			"waiter": "Frederik",
+// 			"price": "708.00",
+// 			"turn": 5
+// 		},
+// 		{
+// 			"product": "Chips",
+// 			"date": "2023-03-20T05:26:22.808Z",
+// 			"waiter": "Micah",
+// 			"price": "957.00",
+// 			"turn": 20
+// 		},
+// 		{
+// 			"product": "Mouse",
+// 			"date": "2023-03-20T01:09:47.250Z",
+// 			"waiter": "Arvid",
+// 			"price": "165.00",
+// 			"turn": 36
+// 		},
+// 		{
+// 			"product": "Pants",
+// 			"date": "2023-03-19T18:51:23.707Z",
+// 			"waiter": "Mark",
+// 			"price": "306.00",
+// 			"turn": 11
+// 		},
+// 		{
+// 			"product": "Shoes",
+// 			"date": "2023-03-20T00:31:00.884Z",
+// 			"waiter": "Hershel",
+// 			"price": "143.00",
+// 			"turn": 5
+// 		},
+// 		{
+// 			"product": "Gloves",
+// 			"date": "2023-03-20T06:16:40.558Z",
+// 			"waiter": "Cesar",
+// 			"price": "822.00",
+// 			"turn": 14
+// 		},
+// 		{
+// 			"product": "Shoes",
+// 			"date": "2023-03-19T23:36:53.094Z",
+// 			"waiter": "Mark",
+// 			"price": "439.00",
+// 			"turn": 38
+// 		},
+// 		{
+// 			"product": "Soap",
+// 			"date": "2023-03-19T21:58:23.194Z",
+// 			"waiter": "Mohammed",
+// 			"price": "112.00",
+// 			"turn": 24
+// 		},
+// 		{
+// 			"product": "Chicken",
+// 			"date": "2023-03-19T23:29:56.871Z",
+// 			"waiter": "Sydnee",
+// 			"price": "348.00",
+// 			"turn": 29
+// 		},
+// 		{
+// 			"product": "Table",
+// 			"date": "2023-03-19T14:32:25.773Z",
+// 			"waiter": "Rudolph",
+// 			"price": "718.00",
+// 			"turn": 27
+// 		},
+// 		{
+// 			"product": "Pizza",
+// 			"date": "2023-03-20T04:19:43.555Z",
+// 			"waiter": "Justen",
+// 			"price": "956.00",
+// 			"turn": 3
+// 		},
+// 		{
+// 			"product": "Salad",
+// 			"date": "2023-03-20T00:53:04.128Z",
+// 			"waiter": "Uriah",
+// 			"price": "431.00",
+// 			"turn": 21
+// 		},
+// 		{
+// 			"product": "Chicken",
+// 			"date": "2023-03-20T07:52:03.351Z",
+// 			"waiter": "Margot",
+// 			"price": "932.00",
+// 			"turn": 12
+// 		},
+// 		{
+// 			"product": "Soap",
+// 			"date": "2023-03-20T08:11:36.963Z",
+// 			"waiter": "Anissa",
+// 			"price": "837.00",
+// 			"turn": 14
+// 		},
+// 		{
+// 			"product": "Gloves",
+// 			"date": "2023-03-19T18:06:35.996Z",
+// 			"waiter": "Everett",
+// 			"price": "960.00",
+// 			"turn": 40
+// 		},
+// 		{
+// 			"product": "Hat",
+// 			"date": "2023-03-19T16:46:59.108Z",
+// 			"waiter": "Aurelio",
+// 			"price": "694.00",
+// 			"turn": 6
+// 		},
+// 		{
+// 			"product": "Pizza",
+// 			"date": "2023-03-20T05:39:51.429Z",
+// 			"waiter": "Elena",
+// 			"price": "792.00",
+// 			"turn": 38
+// 		},
+// 		{
+// 			"product": "Chicken",
+// 			"date": "2023-03-19T10:17:18.460Z",
+// 			"waiter": "Ona",
+// 			"price": "395.00",
+// 			"turn": 39
+// 		},
+// 		{
+// 			"product": "Fish",
+// 			"date": "2023-03-19T09:35:27.923Z",
+// 			"waiter": "David",
+// 			"price": "609.00",
+// 			"turn": 1
+// 		},
+// 		{
+// 			"product": "Sausages",
+// 			"date": "2023-03-20T05:12:10.021Z",
+// 			"waiter": "Stanton",
+// 			"price": "868.00",
+// 			"turn": 36
+// 		},
+// 		{
+// 			"product": "Bike",
+// 			"date": "2023-03-19T22:50:28.788Z",
+// 			"waiter": "Gino",
+// 			"price": "39.00",
+// 			"turn": 26
+// 		},
+// 		{
+// 			"product": "Pizza",
+// 			"date": "2023-03-19T16:40:28.663Z",
+// 			"waiter": "Alycia",
+// 			"price": "879.00",
+// 			"turn": 21
+// 		},
+// 		{
+// 			"product": "Shoes",
+// 			"date": "2023-03-19T13:27:37.123Z",
+// 			"waiter": "Name",
+// 			"price": "361.00",
+// 			"turn": 20
+// 		},
+// 		{
+// 			"product": "Hat",
+// 			"date": "2023-03-19T10:22:36.073Z",
+// 			"waiter": "Chloe",
+// 			"price": "995.00",
+// 			"turn": 24
+// 		},
+// 		{
+// 			"product": "Mouse",
+// 			"date": "2023-03-20T06:27:53.857Z",
+// 			"waiter": "Madisen",
+// 			"price": "326.00",
+// 			"turn": 10
+// 		},
+// 		{
+// 			"product": "Car",
+// 			"date": "2023-03-19T21:20:50.800Z",
+// 			"waiter": "Anika",
+// 			"price": "195.00",
+// 			"turn": 24
+// 		},
+// 		{
+// 			"product": "Fish",
+// 			"date": "2023-03-20T03:09:29.752Z",
+// 			"waiter": "Buford",
+// 			"price": "867.00",
+// 			"turn": 16
+// 		},
+// 		{
+// 			"product": "Chips",
+// 			"date": "2023-03-20T08:12:10.267Z",
+// 			"waiter": "Lenore",
+// 			"price": "504.00",
+// 			"turn": 23
+// 		},
+// 		{
+// 			"product": "Gloves",
+// 			"date": "2023-03-20T06:27:46.817Z",
+// 			"waiter": "Lonie",
+// 			"price": "891.00",
+// 			"turn": 25
+// 		},
+// 		{
+// 			"product": "Soap",
+// 			"date": "2023-03-20T00:03:11.677Z",
+// 			"waiter": "Colt",
+// 			"price": "119.00",
+// 			"turn": 30
+// 		},
+// 		{
+// 			"product": "Ball",
+// 			"date": "2023-03-20T03:15:32.483Z",
+// 			"waiter": "Ayden",
+// 			"price": "733.00",
+// 			"turn": 11
+// 		},
+// 		{
+// 			"product": "Shoes",
+// 			"date": "2023-03-20T05:54:33.618Z",
+// 			"waiter": "Eriberto",
+// 			"price": "390.00",
+// 			"turn": 31
+// 		},
+// 		{
+// 			"product": "Pizza",
+// 			"date": "2023-03-19T12:59:39.370Z",
+// 			"waiter": "Tony",
+// 			"price": "516.00",
+// 			"turn": 4
+// 		},
+// 		{
+// 			"product": "Bacon",
+// 			"date": "2023-03-19T23:11:00.347Z",
+// 			"waiter": "Narciso",
+// 			"price": "5.00",
+// 			"turn": 16
+// 		},
+// 		{
+// 			"product": "Computer",
+// 			"date": "2023-03-19T09:45:26.982Z",
+// 			"waiter": "Maegan",
+// 			"price": "980.00",
+// 			"turn": 26
+// 		},
+// 		{
+// 			"product": "Bacon",
+// 			"date": "2023-03-19T15:32:18.632Z",
+// 			"waiter": "Madisen",
+// 			"price": "565.00",
+// 			"turn": 19
+// 		},
+// 		{
+// 			"product": "Pants",
+// 			"date": "2023-03-19T10:25:21.923Z",
+// 			"waiter": "Milan",
+// 			"price": "942.00",
+// 			"turn": 16
+// 		},
+// 		{
+// 			"product": "Chicken",
+// 			"date": "2023-03-20T07:48:27.596Z",
+// 			"waiter": "Roberta",
+// 			"price": "8.00",
+// 			"turn": 14
+// 		},
+// 		{
+// 			"product": "Bacon",
+// 			"date": "2023-03-19T13:23:28.571Z",
+// 			"waiter": "Arne",
+// 			"price": "463.00",
+// 			"turn": 23
+// 		},
+// 		{
+// 			"product": "Chips",
+// 			"date": "2023-03-19T14:14:08.201Z",
+// 			"waiter": "Neva",
+// 			"price": "302.00",
+// 			"turn": 2
+// 		},
+// 		{
+// 			"product": "Bacon",
+// 			"date": "2023-03-19T13:38:28.458Z",
+// 			"waiter": "Otho",
+// 			"price": "839.00",
+// 			"turn": 0
+// 		},
+// 		{
+// 			"product": "Table",
+// 			"date": "2023-03-19T12:55:44.657Z",
+// 			"waiter": "Mylene",
+// 			"price": "322.00",
+// 			"turn": 34
+// 		},
+// 		{
+// 			"product": "Soap",
+// 			"date": "2023-03-19T13:34:33.003Z",
+// 			"waiter": "Brandyn",
+// 			"price": "248.00",
+// 			"turn": 9
+// 		},
+// 		{
+// 			"product": "Table",
+// 			"date": "2023-03-20T00:21:50.200Z",
+// 			"waiter": "Baron",
+// 			"price": "277.00",
+// 			"turn": 11
+// 		},
+// 		{
+// 			"product": "Cheese",
+// 			"date": "2023-03-19T16:30:10.791Z",
+// 			"waiter": "Leslie",
+// 			"price": "202.00",
+// 			"turn": 25
+// 		},
+// 		{
+// 			"product": "Chicken",
+// 			"date": "2023-03-19T22:53:26.479Z",
+// 			"waiter": "Leora",
+// 			"price": "13.00",
+// 			"turn": 1
+// 		},
+// 		{
+// 			"product": "Bacon",
+// 			"date": "2023-03-19T14:50:30.936Z",
+// 			"waiter": "Maximo",
+// 			"price": "597.00",
+// 			"turn": 37
+// 		},
+// 		{
+// 			"product": "Sausages",
+// 			"date": "2023-03-20T03:00:56.191Z",
+// 			"waiter": "Jason",
+// 			"price": "73.00",
+// 			"turn": 24
+// 		},
+// 		{
+// 			"product": "Mouse",
+// 			"date": "2023-03-19T21:23:22.141Z",
+// 			"waiter": "Alvera",
+// 			"price": "417.00",
+// 			"turn": 27
+// 		},
+// 		{
+// 			"product": "Pants",
+// 			"date": "2023-03-19T12:13:49.811Z",
+// 			"waiter": "Amalia",
+// 			"price": "268.00",
+// 			"turn": 11
+// 		},
+// 		{
+// 			"product": "Computer",
+// 			"date": "2023-03-19T12:33:06.431Z",
+// 			"waiter": "Bethel",
+// 			"price": "750.00",
+// 			"turn": 22
+// 		},
+// 		{
+// 			"product": "Mouse",
+// 			"date": "2023-03-19T23:42:13.038Z",
+// 			"waiter": "Arnulfo",
+// 			"price": "428.00",
+// 			"turn": 27
+// 		},
+// 		{
+// 			"product": "Pizza",
+// 			"date": "2023-03-19T21:42:46.877Z",
+// 			"waiter": "Walter",
+// 			"price": "852.00",
+// 			"turn": 18
+// 		},
+// 		{
+// 			"product": "Chicken",
+// 			"date": "2023-03-20T03:39:38.136Z",
+// 			"waiter": "Demarcus",
+// 			"price": "683.00",
+// 			"turn": 5
+// 		},
+// 		{
+// 			"product": "Shoes",
+// 			"date": "2023-03-20T00:04:55.651Z",
+// 			"waiter": "Erwin",
+// 			"price": "760.00",
+// 			"turn": 28
+// 		},
+// 		{
+// 			"product": "Salad",
+// 			"date": "2023-03-19T17:23:35.618Z",
+// 			"waiter": "Duane",
+// 			"price": "838.00",
+// 			"turn": 1
+// 		},
+// 		{
+// 			"product": "Keyboard",
+// 			"date": "2023-03-19T19:49:13.039Z",
+// 			"waiter": "Darrion",
+// 			"price": "217.00",
+// 			"turn": 13
+// 		},
+// 		{
+// 			"product": "Table",
+// 			"date": "2023-03-19T16:33:40.343Z",
+// 			"waiter": "Shaina",
+// 			"price": "639.00",
+// 			"turn": 39
+// 		},
+// 		{
+// 			"product": "Table",
+// 			"date": "2023-03-19T09:32:25.849Z",
+// 			"waiter": "Modesto",
+// 			"price": "866.00",
+// 			"turn": 6
+// 		},
+// 		{
+// 			"product": "Bike",
+// 			"date": "2023-03-19T16:36:07.672Z",
+// 			"waiter": "Valentine",
+// 			"price": "419.00",
+// 			"turn": 9
+// 		},
+// 		{
+// 			"product": "Chicken",
+// 			"date": "2023-03-19T18:18:11.207Z",
+// 			"waiter": "Sebastian",
+// 			"price": "914.00",
+// 			"turn": 35
+// 		},
+// 		{
+// 			"product": "Car",
+// 			"date": "2023-03-20T01:58:19.167Z",
+// 			"waiter": "Unique",
+// 			"price": "778.00",
+// 			"turn": 35
+// 		},
+// 		{
+// 			"product": "Chair",
+// 			"date": "2023-03-20T01:37:36.262Z",
+// 			"waiter": "Al",
+// 			"price": "518.00",
+// 			"turn": 11
+// 		},
+// 		{
+// 			"product": "Fish",
+// 			"date": "2023-03-19T16:25:06.442Z",
+// 			"waiter": "Cassidy",
+// 			"price": "355.00",
+// 			"turn": 28
+// 		},
+// 		{
+// 			"product": "Hat",
+// 			"date": "2023-03-19T09:20:31.094Z",
+// 			"waiter": "Bell",
+// 			"price": "752.00",
+// 			"turn": 8
+// 		},
+// 		{
+// 			"product": "Car",
+// 			"date": "2023-03-19T11:24:37.760Z",
+// 			"waiter": "Dasia",
+// 			"price": "992.00",
+// 			"turn": 25
+// 		},
+// 		{
+// 			"product": "Keyboard",
+// 			"date": "2023-03-20T04:56:21.690Z",
+// 			"waiter": "Cary",
+// 			"price": "561.00",
+// 			"turn": 24
+// 		},
+// 		{
+// 			"product": "Chair",
+// 			"date": "2023-03-19T13:50:42.536Z",
+// 			"waiter": "Damien",
+// 			"price": "625.00",
+// 			"turn": 15
+// 		}
+// 	])
+
+// #####################################################################################FIN CREACION##########################################################################
+
+
+
+// ###################################################################################### MANIPULACION DE LA DB###############################################################
+
+// db.Proveedores.find({firstName : "Judd"})
+
+// db.Ventas.updateOne({waiter: "Nasir"},{ $set : {"turn" : 1}})
+
+// db.Ventas.updateOne({waiter: "Nasir"},{ $set : {"waiterID" : 1}})
+
+// db.Ventas.updateMany({turn : 11}, {$set:{waiter : "samuel"}})
+
+// db.Ventas.updateMany({turn : 11}, {$set:{waiterID : 30}})
+
+// db.Compras.deleteOne({provider : "Keara"})
+
+// db.Compras.deleteMany({amount: 20})
+
+// db.Proveedores.drop()
+
+
+
+// ############################################## EJEMPLOS CON AGGREGATE #######################################################################
+
+
+
+// db.ventas.aggregate([
+//     {$lookup:{
+//       from: "Compras",
+//       localField : "price",
+//       foreignField : "price",
+//       as : "prices"
+//     }}
+// ])
+
+// db.ventas.aggregate([
+//     {$lookup:{
+//       from: "Proveedores",
+//       localField : "waiter",
+//       foreignField : "firstName",
+//       as : "employees"
+//     }}
+// ])
+
+// db.Compras.aggregate([
+//   {$match : {
+//     amount : 3
+//   }},
+//   {$project : { 
+//     provider : 1, price : 1, product : 1
+//   }},
+//   {$limit : 1}
+// ])
+
+// db.Compras.aggregate([
+//   {$match : {
+//     amount : 10
+//   }},
+//   {$project : { 
+//     provider : 1, price : 1, product : 1
+//   }},
+//   {$sort :{ price : -1} }
+// ])
+
+
+
